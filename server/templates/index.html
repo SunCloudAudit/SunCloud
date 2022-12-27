@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SunCloud tool </title>
+    
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/bootstrap/css/bootstrap.min.css" ) }}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/fonts/font-awesome.min.css" ) }}>
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/css/Contact-Form-Clean.css" ) }}>
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/css/Features-Boxed.css" ) }}>
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/css/Footer-Clean.css" ) }}>
+    <link rel="stylesheet" href={{ url_for('static', filename="assets/css/styles.css" ) }}>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SunCloud Audit</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/> <!--Replace with your tailwind.css once created-->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> <!--Totally optional :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
+</head>
+
+<body style="font-family: ABeeZee, sans-serif;">
+    <header>
+        <!--Nav-->
+        <nav aria-label="menu nav" class="bg-gray-800 pt-2 md:pt-1 pb-1 px-1 mt-0 h-auto fixed w-full z-20 top-0">
+    
+            <div class="flex flex-wrap items-center">
+                <div class="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
+                    <a href="#" aria-label="Home">
+                        <span class="text-xl pl-2"><i class="fa fa-cloud"></i></span>
+                    </a>
+                </div>
+    
+                <div class="flex flex-1 md:w-1/3 justify-center md:justify-start text-white px-2">
+                    <span class="relative w-full">
+                        <h1 class="display-5 text-center fw-bold">SunCloud tool</h1>
+                    </span>
+                </div>
+    
+                <div class="flex w-full pt-2 content-center justify-between md:w-1/3 md:justify-end">
+                    <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+                        <li class="flex-1 md:flex-none md:mr-3">
+                            <a class="inline-block py-2 px-4 text-white no-underline" href="#">INFO</a>
+                        </li>
+                        <li class="flex-1 md:flex-none md:mr-3">
+                            <a class="inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="/cis">CIS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+        </nav>
+    </header>
+    <div class="container-fluid text-center py-5" id="audit" style="background: #fafafa;"><br><br>
+        <p class="col-md-8 fs-4" style="margin: auto;">This tool allow you to audit AWS</p><br><br>
+
+
+
+        <form method="POST" action="/audit">
+            <div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-4" style="min-width: 300px;">
+                        <input class="form-control" name="AWS_ACCESS_KEY_ID" placeholder="AWS_ACCESS_KEY_ID"
+                            style="display: inline;font-size: 21px;background: rgba(255,255,255,0);max-width: 80%;width: 100%;border-radius: 9px;border-color: rgb(181,181,181);">
+
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-4" style="min-width: 300px;">
+                        <input class="form-control" name="AWS_SECRET_ACCESS_KEY" placeholder="AWS_SECRET_ACCESS_KEY"
+                            style="display: inline;font-size: 21px;background: rgba(255,255,255,0);max-width: 80%;width: 100%;border-radius: 9px;border-color: rgb(181,181,181);">
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-4" style="min-width: 300px;">
+                        <div class="input-area mt-4">
+                            <input class="form-control" name="AWS_REGION" placeholder="AWS_REGION"
+                                style="display: inline;font-size: 21px;background: rgba(255,255,255,0);max-width: 80%;width: 100%;border-radius: 9px;border-color: rgb(181,181,181);">
+                                <!-- <option value="0">Select Region</option>
+                                <option value="us-west-2">us-west-2</option>
+                                <option value="us-east-1">us-east-1</option>
+                                <option value="us-east-2">us-east-2</option> -->
+                            </input>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-dark" type="submit" style="border-radius: 6px;margin-left: 8px;">Audit</button>
+        </form><br><br>
+
+    </div>
+
+    <footer class="footer-clean">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#audit">Audit AWS project</a></li>
+                        <li><a href="#features">Sarif Viewer</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#audit">Audit</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="/info">How it works</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#audit">Facebook</a></li>
+                        <li><a href="#features">Email</a></li>
+                        <li><a href="/info">Github</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 item social">
+                    <p class="copyright">SunCloud tool<br>Tool audit for AWS</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script src={{ url_for('static', filename="assets/js/jquery.min.js" ) }}></script>
+    <script src={{ url_for('static', filename="assets/bootstrap/js/bootstrap.min.js" ) }}></script>
+</body>
+
+</html>
