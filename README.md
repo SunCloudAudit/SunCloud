@@ -40,5 +40,7 @@ cd server
 python3 app.py
 ```
 Server run at http://localhost:5000
+![Screenshot from 2023-05-24 11-19-18](https://github.com/SunCloudAudit/SunCloud/assets/69457314/65f36d5c-5756-4533-a2ad-456f24199663)
+
 
 
