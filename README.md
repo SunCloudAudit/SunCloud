@@ -17,4 +17,28 @@ Functions of the tool:
 ## Scope and Limitations
 The tool is built for all users of the AWS cloud platform. The tool can run on many different operating systems such as Windows, Linux, etc.
 # Installation
+## Install AWS-SDK
+```
+gem install aws-sdk
+```
+
+## Install Ruby
+install Ruby 3 at  https://rubyinstaller.org/
+## Clone this project
+```
+git clone
+```
+## Install Flask
+```
+cd server
+pip install -r requirements.txt
+flask --version
+```
+## Run Web-interface
+```
+cd server
+python app.py
+```
+Server run at http://localhost:5000
+
 
