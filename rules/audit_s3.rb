@@ -133,7 +133,6 @@ def check_Ensure_Block_public_access_Account()
     return check
 end
 
-#2.1.1 Ensure all S3 buckets employ encryption-at-rest
 $file.write("result12.1.1 \nresult2Ensure all S3 buckets employ encryption-at-rest\n")
 if check_buckets_employ_encryption() == true
     $pass += 1 
