@@ -209,15 +209,6 @@ def check_Object_logging_for_read_write_events_enable()
     return check     
 end
 
-#3.1 ( loi goi get_event_selectors ko ra du lieu)
-# $file.write("result13.1 \nresult2Ensure CloudTrail is enabled in all regions")
-# if check_ClouTrail_enable_all_region() == true
-#     $file.write("Pass: IAM policies allow full are not attached\n")
-# else
-#     $file.write("Fail: IAM policies allow full are attached\n")
-# end
-
-# 3.2 
 $file.write("result13.2 \nresult2Ensure CloudTrail log file validation is enabled\n")
 if check_ClouTrail_log_file_enable() == true
     $pass += 1 
@@ -227,15 +218,6 @@ else
     $file.write("result3<span class='text-red-700 bg-red-100'>Fail</span>\n")
 end
 
-#3.3 \nresult2Ensure the S3 bucket used to store CloudTrail logs is not publicly accessible (chua xong)
-# $file.write("result13.3 \nresult2Ensure the S3 bucket used to store CloudTrail logs is not publicly accessible")
-# if check_S3_bucket_used_to_store_CloudTrail() == true
-#     $file.write("Pass: IAM policies allow full are not attached\n")
-# else
-#     $file.write("Fail: IAM policies allow full are attached\n")
-# end
-
-#3.4 
 $file.write("result13.4 \nresult2Ensure CloudTrail trails are integrated with CloudWatch Logs\n")
 if check_CloudTrail_intergrated_with_CloudWatch() == true
     $pass += 1 
@@ -245,7 +227,6 @@ else
     $file.write("result3<span class='text-red-700 bg-red-100'>Fail</span>\n")
 end
 
-#3.5 
 $file.write("result13.5 \nresult2Ensure AWS Config is enabled in all regions\n")
 if check_AWS_config_enable_all_regions() == true
     $pass += 1 
@@ -255,7 +236,6 @@ else
     $file.write("result3<span class='text-red-700 bg-red-100'>Fail</span>\n")
 end
 
-#3.6 go S3 and enabled Server access logging 
 $file.write("result13.6 \nresult2Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket\n")
 if check_S3_bucket_logging_enable_on_cloudtrail() == true
     $pass += 1 
@@ -275,7 +255,6 @@ else
     $file.write("result3<span class='text-red-700 bg-red-100'>Fail</span>\n")
 end
 
-#3.8 \nresult2Ensure rotation for customer created CMKs is enable (Go to KMS and config at Customer managed keys)
 $file.write("result13.8 \nresult2Ensure rotation for customer created CMKs is enable\n")
 if check_rotation_CMKs_enable() == true
     $pass += 1 
@@ -285,14 +264,5 @@ else
     $file.write("result3<span class='text-red-700 bg-red-100'>Fail</span>\n")
 end
 
-#3.9 (Khong co AWS- SDK)
-
-#3.10, 3.11
-# $file.write("result13.10, 3.11 \nresult2Ensure that Object-level logging for read,write events is enabled for S3 bucket\n")
-# if check_Object_logging_for_read_write_events_enable() == true
-#     $file.write("Pass: IAM policies allow full are not attached\n")
-# else
-#     $file.write("Fail: IAM policies allow full are attached\n")
-# end
 $file.write($pass.to_s + ":" + $fail.to_s)
 $file.close
