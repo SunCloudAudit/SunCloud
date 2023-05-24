@@ -7,8 +7,8 @@ Functions of the tool:
 - Log in
 - View documents CIS Benmark
 - Auditing IAM
-- EC2 audit
-- S3 . audit
+- Auditing EC2
+- Auditing S3
 - Logging audit
 - Networking Audit
 - Monitoring Audit
@@ -23,7 +23,7 @@ gem install aws-sdk
 ```
 
 ## Install Ruby
-install Ruby 3 at  https://rubyinstaller.org/
+Install Ruby 3 at  https://rubyinstaller.org/
 ## Clone this project
 ```
 git clone https://github.com/SunCloudAudit/SunCloud
