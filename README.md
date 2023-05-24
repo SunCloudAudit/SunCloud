@@ -37,7 +37,7 @@ flask --version
 ## Run Web-interface
 ```
 cd server
-python app.py
+python3 app.py
 ```
 Server run at http://localhost:5000
 
