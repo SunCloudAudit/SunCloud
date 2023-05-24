@@ -26,7 +26,7 @@ gem install aws-sdk
 install Ruby 3 at  https://rubyinstaller.org/
 ## Clone this project
 ```
-git clone
+git clone https://github.com/SunCloudAudit/SunCloud
 ```
 ## Install Flask
 ```
