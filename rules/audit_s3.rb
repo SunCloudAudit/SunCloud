@@ -73,10 +73,6 @@ def check_MFA_Delete_enable()
             if resp_bucket_MFA.mfa_delete.nil?
                 check = false
             else
-                # $file.write("Versioning: ")
-                # $file.write(resp_bucket_MFA.status)
-                # $file.write(" MFA_delete: ")
-                # $file.write(resp_bucket_MFA.mfa_delete)
                 if(resp_bucket_MFA.status != "Enabled") | (resp_bucket_MFA.mfa_delete != "Enabled")
                     check = false
                 end
@@ -147,15 +143,6 @@ else
     $file.write("result3<span class='text-red-700 bg-red-100'>Fail</span>\n")
 end
 
-#2.1.2 Ensure S3 Bucket Policy is set to deny HTTP requests (CHUA XONG)
-# $file.write("2.1.2 Ensure S3 Bucket Policy is set to deny HTTP requests")
-# if check_deny_HTTP_requests() == true
-#     $file.write("Pass: IAM policies allow full are not attached\n")
-# else
-#     $file.write("Fail: IAM policies allow full are attached\n")
-# end
-
-#2.1.3 Ensure MFA Delete is enable on S3 buckets
 $file.write("result12.1.3 \nresult2Ensure MFA Delete is enable on S3 buckets\n")
 if check_MFA_Delete_enable() == true
     $pass += 1 
@@ -164,17 +151,6 @@ else
     $fail += 1 
     $file.write("result3<span class='text-red-700 bg-red-100'>Fail</span>\n")
 end
-
-#2.1.4 Ensure all data in Amazon S3 has been discovered, classified and secured when required. (Manual
-#2.1.5 Ensure that S3 Buckets are configured with 'Block public access (bucket settings)' 
-# $file.write("result12.1.5 \nresult4Ensure that S3 Buckets are configured with 'Block public access (bucket settings)'\n")
-# if check_Ensure_Block_public_access_Bucket() == true
-#     $pass += 1 
-#     $file.write("result3<span class='text-green-700 bg-green-100'>Pass</span>\n")
-# else
-#     $fail += 1 
-#     $file.write("result3<span class='text-red-700 bg-red-100'>Fail</span>\n")
-# end
 
 $file.write("result12.1.6 \nresult2Ensure that S3 Buckets are configured with 'Block public access (account settings)'\n")
 if check_Ensure_Block_public_access_Account() == true
